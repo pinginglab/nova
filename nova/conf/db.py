@@ -6,7 +6,7 @@ import os
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MYSQL_DB_NAME', 'spidermax'),
+        'NAME': os.environ.get('MYSQL_DB_NAME', 'core'),
         'USER': os.environ.get('MYSQL_DB_USER', 'root'),
         'PASSWORD': os.environ.get('MYSQL_DB_PSW', ''),
         'HOST': os.environ.get('MYSQL_DB_HOST', '172.16.236.1'),
