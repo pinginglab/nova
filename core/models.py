@@ -1,13 +1,6 @@
 from django.db import models
 from django.db.models import CASCADE
 from django.contrib.auth.models import User
-from rest_framework import serializers
-
-
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ('url', 'username', 'email', 'is_staff')
 
 
 class Base(models.Model):
@@ -19,13 +12,13 @@ class Base(models.Model):
     end_datetime = models.DateTimeField(verbose_name="结束时间")
 
 
-class Image(Base):
+class DockerImage(Base):
     repositiry = models.CharField(max_length=128, null=False, verbose_name='镜像名称')
     tag = models.CharField(max_length=128, null=False, verbose_name='镜像标签')
     size = models.CharField(max_length=128, null=False, verbose_name='镜像大小')
 
 
-class Container(Base):
+class DockerContainer(Base):
     image_name = models.ForeignKey(Image, on_delete=CASCADE)
     container_id = models.CharField(max_length=128, null=False, verbose_name='容器ID')
     user = models.ForeignKey(User, on_delete=CASCADE)
