@@ -14,7 +14,6 @@ class UserViewSet(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         users = User.objects.all()
         user_serializer = UserSerializer(users, many=True)
-
         return Response(user_serializer.data, status=status.HTTP_200_OK)
 
     @detail_route()
