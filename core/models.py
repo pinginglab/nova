@@ -1,3 +1,33 @@
 from django.db import models
+from django.db.models import CASCADE
+from django.contrib.auth.models import User
+from rest_framework import serializers
 
-# Create your models here.
+
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = ('url', 'username', 'email', 'is_staff')
+
+
+class Base(models.Model):
+    class Meta:
+        abstract = True
+        verbose_name = "记录日期"
+
+    created_datetime = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
+    end_datetime = models.DateTimeField(verbose_name="结束时间")
+
+
+class Image(Base):
+    repositiry = models.CharField(max_length=128, null=False, verbose_name='镜像名称')
+    tag = models.CharField(max_length=128, null=False, verbose_name='镜像标签')
+    size = models.CharField(max_length=128, null=False, verbose_name='镜像大小')
+
+
+class Container(Base):
+    image_name = models.ForeignKey(Image, on_delete=CASCADE)
+    container_id = models.CharField(max_length=128, null=False, verbose_name='容器ID')
+    user = models.ForeignKey(User, on_delete=CASCADE)
+    container_url = models.CharField(max_length=128, null=False, verbose_name='容器映射出来的链接')
+
