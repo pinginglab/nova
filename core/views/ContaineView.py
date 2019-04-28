@@ -1,4 +1,5 @@
 import docker
+from django.contrib.auth.decorators import login_required
 from rest_framework import authentication, permissions
 from rest_framework.response import Response
 from rest_framework.utils import json
@@ -12,6 +13,7 @@ class ContainerView(APIView):
     def __init__(self):
         self.client = docker.from_env()
 
+    @login_required
     def post(self, request):
         data = request.body.decode('utf-8')
         data = json.loads(data)
