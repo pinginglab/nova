@@ -19,8 +19,13 @@ class DockerImage(Base):
 
 
 class DockerContainer(Base):
-    image_name = models.ForeignKey(Image, on_delete=CASCADE)
+    image_name = models.ForeignKey(DockerImage, on_delete=CASCADE)
     container_id = models.CharField(max_length=128, null=False, verbose_name='容器ID')
     user = models.ForeignKey(User, on_delete=CASCADE)
     container_url = models.CharField(max_length=128, null=False, verbose_name='容器映射出来的链接')
 
+
+# class UserTest(User):
+#     class Meta:
+#         model = User
+#         fields = ('username', 'password', 'email', 'is_staff')

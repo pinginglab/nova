@@ -21,14 +21,14 @@ from core.views import UserViewSet
 from core.views.ContaineView import ContainerView
 
 # Routers provide an easy way of automatically determining the URL conf.
-router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
+# router = routers.DefaultRouter()
+# router.register(r'users', UserViewSet, base_name='user')
 
 urlpatterns = [
     # url('admin/', admin.site.urls),
     # Wire up our API using automatic URL routing.
     # Additionally, we include login URLs for the browsable API.
-    url(r'^', include(router.urls)),
+    # url(r'^', include(router.urls)),
     url(r'^core', ContainerView.as_view(), name='core'),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    # url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
