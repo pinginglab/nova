@@ -15,20 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.urls import include
-from rest_framework import routers
-from core.views import UserViewSet
-from core.views.ContaineView import ContainerView
 
 # Routers provide an easy way of automatically determining the URL conf.
 # router = routers.SimpleRouter()
 # router.register(r'user', UserViewSet)
+from apps.core.views.ContaineView import ContainerView
 
 urlpatterns = [
     # url('admin/', admin.site.urls),
     # Wire up our API using automatic URL routing.
     # Additionally, we include login URLs for the browsable API.
-    url(r'^accounts/', include('users.urls')),
+    # url(r'^accounts/', include('users.urls')),
     url(r'^core', ContainerView.as_view(), name='core'),
     # url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-    url(r'', include('siteuser.urls'))
+    # url(r'', include('siteuser.urls'))
 ]
