@@ -34,15 +34,18 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    'users',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'djcelery',
+    'siteuser.users',
+    'siteuser.upload_avatar',
+    'siteuser.notify',
     'core'
 ]
-AUTH_USER_MODEL = 'users.User'
+# AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -52,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'siteuser.middleware.User',
 ]
 
 ROOT_URLCONF = 'nova.urls'
@@ -59,7 +63,8 @@ ROOT_URLCONF = 'nova.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        # 'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': "siteuser.SITEUSER_TEMPLATE"
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -68,10 +73,12 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'siteuser.context_processors.social_sites',
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'nova.wsgi.application'
 
@@ -124,24 +131,24 @@ REST_FRAMEWORK = {
     )
 }
 
-USERS_REGISTRATION_OPEN = True
-
-USERS_VERIFY_EMAIL = False
-
-USERS_AUTO_LOGIN_ON_ACTIVATION = True
-
-USERS_EMAIL_CONFIRMATION_TIMEOUT_DAYS = 3
-
-# Specifies minimum length for passwords:
-USERS_PASSWORD_MIN_LENGTH = 5
-
-# Specifies maximum length for passwords:
-USERS_PASSWORD_MAX_LENGTH = None
-
-# the complexity validator, checks the password strength
-USERS_CHECK_PASSWORD_COMPLEXITY = True
-
-USERS_SPAM_PROTECTION = True  # important!
+# USERS_REGISTRATION_OPEN = True
+#
+# USERS_VERIFY_EMAIL = False
+#
+# USERS_AUTO_LOGIN_ON_ACTIVATION = True
+#
+# USERS_EMAIL_CONFIRMATION_TIMEOUT_DAYS = 3
+#
+# # Specifies minimum length for passwords:
+# USERS_PASSWORD_MIN_LENGTH = 5
+#
+# # Specifies maximum length for passwords:
+# USERS_PASSWORD_MAX_LENGTH = None
+#
+# # the complexity validator, checks the password strength
+# USERS_CHECK_PASSWORD_COMPLEXITY = True
+#
+# USERS_SPAM_PROTECTION = True  # important!
 
 #  ---------------------------------------------------------
 #  Email
@@ -155,10 +162,24 @@ USERS_SPAM_PROTECTION = True  # important!
 # DEFAULT_FROM_EMAIL = 'mail@tuweizhong.com'
 #  ---------------------------------------------------------
 
-USERS_PASSWORD_POLICY = {
-        'UPPER': 0,       # Uppercase 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        'LOWER': 0,       # Lowercase 'abcdefghijklmnopqrstuvwxyz'
-        'DIGITS': 0,      # Digits '0123456789'
-        'PUNCTUATION': 0  # Punctuation """!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
-}
+# USERS_PASSWORD_POLICY = {
+#         'UPPER': 0,       # Uppercase 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+#         'LOWER': 0,       # Lowercase 'abcdefghijklmnopqrstuvwxyz'
+#         'DIGITS': 0,      # Digits '0123456789'
+#         'PUNCTUATION': 0  # Punctuation """!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
+# }
 
+
+class SITEUSER_ACCOUNT_MIXIN(object):
+    login_template = 'login.html'  # 你项目的登录页面模板
+    register_template = 'register.html'  # 你项目的注册页面模板
+    reset_passwd_template = 'reset_password.html'  # 忘记密码的重置密码模板
+    change_passwd_template = 'change_password.html'  # 登录用户修改密码的模板
+    reset_passwd_email_title = u'重置密码'  # 重置密码发送电子邮件的标题
+    reset_passwd_link_expired_in = 24  # 重置密码链接多少小时后失效
+
+    def get_login_context(self, request):
+        return {}
+
+    def get_register_context(self, request):
+        return {}

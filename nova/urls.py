@@ -30,5 +30,5 @@ urlpatterns = [
     url(r'^accounts/', include('users.urls')),
     url(r'^core', ContainerView.as_view(), name='core'),
     # url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-    url(r'^', ContainerView.as_view(), name='core')
+    url(r'', include('siteuser.urls'))
 ]
