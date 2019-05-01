@@ -15,8 +15,9 @@
 
 ### 完成进度条
 - 20190428
-    - 登陆注册和找回密码功能
-    - 镜像生成
+    - login, logout, register, password change
+    - container build return visit url
+    - 
 
 ### 1.1
 （规划中。。。。）

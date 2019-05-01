@@ -126,7 +126,7 @@ REST_FRAMEWORK = {
 
 USERS_REGISTRATION_OPEN = True
 
-USERS_VERIFY_EMAIL = True
+USERS_VERIFY_EMAIL = False
 
 USERS_AUTO_LOGIN_ON_ACTIVATION = True
 
@@ -141,16 +141,24 @@ USERS_PASSWORD_MAX_LENGTH = None
 # the complexity validator, checks the password strength
 USERS_CHECK_PASSWORD_COMPLEXITY = True
 
-USERS_SPAM_PROTECTION = False  # important!
+USERS_SPAM_PROTECTION = True  # important!
 
 #  ---------------------------------------------------------
 #  Email
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-EMAIL_USE_TLS = False
-EMAIL_HOST = 'smtp.139.com'
-EMAIL_PORT = 25
-EMAIL_HOST_USER = 'mail@tuweizhong.com'
-EMAIL_HOST_PASSWORD = 'xxxx'
-DEFAULT_FROM_EMAIL = 'mail@tuweizhong.com'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#
+# EMAIL_USE_TLS = False
+# EMAIL_HOST = 'smtp.139.com'
+# EMAIL_PORT = 25
+# EMAIL_HOST_USER = 'yerik_shu@139.com'
+# EMAIL_HOST_PASSWORD = 'acvcqwdqads'
+# DEFAULT_FROM_EMAIL = 'mail@tuweizhong.com'
 #  ---------------------------------------------------------
+
+USERS_PASSWORD_POLICY = {
+        'UPPER': 0,       # Uppercase 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        'LOWER': 0,       # Lowercase 'abcdefghijklmnopqrstuvwxyz'
+        'DIGITS': 0,      # Digits '0123456789'
+        'PUNCTUATION': 0  # Punctuation """!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
+}
+

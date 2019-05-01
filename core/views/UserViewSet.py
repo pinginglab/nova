@@ -17,7 +17,7 @@ class UserViewSet(viewsets.ModelViewSet):
         return Response(user_serializer.data, status=status.HTTP_200_OK)
 
     @detail_route(methods=['post'])
-    def create(self, request):
+    def create(self, request, pk=None):
         serializer = UserSerializer(data=json.loads(request.body))
         if serializer.is_valid():
             serializer.save()

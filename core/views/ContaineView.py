@@ -22,7 +22,7 @@ class ContainerView(APIView):
         """
         if data['method'] == 'c':
             image_name = data['image_name']
-            #container_new = self.client.containers.run(image_name, detach=True, ports={'2222/tcp': 3333})
+            # container_new = self.client.containers.run(image_name, detach=True, ports={'2222/tcp': 3333})
             container_new = self.client.containers.run("webgoat/webgoat-7.1", detach=True, ports={'8080/tcp': 3333})
             return Response(container_new.id)
 
