@@ -1,9 +1,11 @@
 # 用户收藏 用户取消收藏
 from django.http import HttpResponse
+from django.views import View
 
 from apps.course.models import Course
 from apps.operation.models import UserFavorite
-from apps.organization.models import CourseOrg, Teacher
+from apps.organization.models.courseOrg import CourseOrg
+from apps.organization.models.teacher import Teacher
 
 
 class AddFavView(View):
