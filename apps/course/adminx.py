@@ -1,6 +1,4 @@
-import xadmin as xadmin
-from django.contrib import admin
-
+import xadmin
 from apps.course.models import CourseResource, Lesson, Course, BannerCourse, Video
 
 
@@ -61,6 +59,7 @@ class BannerCourseAdmin(object):
         qs = qs.filter(is_banner=True)
         return qs
 
+
 class LessonAdmin(object):
     list_display = ['course', 'name', 'add_time']
     search_fields = ['course', 'name']
@@ -77,6 +76,7 @@ class CourseResourceAdmin(object):
     list_display = ['course', 'name', 'download', 'add_time']
     search_fields = ['course', 'download', 'name']
     list_filter = ['course__name', 'name', 'download', 'add_time']
+
 
 xadmin.site.register(Course, CourseAdmin)
 xadmin.site.register(BannerCourse, BannerCourseAdmin)
