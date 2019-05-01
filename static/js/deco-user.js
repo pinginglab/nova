@@ -12,7 +12,7 @@ function sendCodeChangeEmail($btn) {
     cache: false,
     type: "get",
     dataType: 'json',
-    url: "/users/sendemail_code/",
+    url: "/pingusers/sendemail_code/",
     data: $('#jsChangeEmailForm').serialize(),
     async: true,
     beforeSend: function (XMLHttpRequest) {
@@ -50,7 +50,7 @@ function changeEmailSubmit($btn) {
     cache: false,
     type: 'post',
     dataType: 'json',
-    url: "/users/update_email/ ",
+    url: "/pingusers/update_email/ ",
     data: $('#jsChangeEmailForm').serialize(),
     async: true,
     beforeSend: function (XMLHttpRequest) {
@@ -88,7 +88,7 @@ $(function () {
       cache: false,
       type: "POST",
       dataType: 'json',
-      url: "/users/update/pwd/",
+      url: "/pingusers/update/pwd/",
       data: $('#jsResetPwdForm').serialize(),
       async: true,
       success: function (data) {
@@ -164,7 +164,7 @@ $(function () {
       cache: false,
       type: 'post',
       dataType: 'json',
-      url: "/users/info/",
+      url: "/pingusers/info/",
       data: $jsEditUserForm.serialize(),
       async: true,
       beforeSend: function (XMLHttpRequest) {

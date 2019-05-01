@@ -3,7 +3,7 @@ import json
 from django.http import HttpResponse
 from django.views import View
 
-from apps.users.forms import UploadImageForm
+from apps.pingusers.forms import UploadImageForm
 from apps.utils.mixin_utils import LoginRequiredMixin
 
 

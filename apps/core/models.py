@@ -1,6 +1,7 @@
-from django.contrib.auth.models import User
 from django.db import models
 from django.db.models import CASCADE
+
+from apps.pingusers.models import UserProfile
 
 
 class Base(models.Model):
@@ -21,7 +22,7 @@ class DockerImage(Base):
 class DockerContainer(Base):
     image_name = models.ForeignKey(DockerImage, on_delete=CASCADE)
     container_id = models.CharField(max_length=128, null=False, verbose_name='容器ID')
-    user = models.ForeignKey(User, on_delete=CASCADE)
+    user = models.ForeignKey(UserProfile, on_delete=CASCADE)
     container_url = models.CharField(max_length=128, null=False, verbose_name='容器映射出来的链接')
 
 

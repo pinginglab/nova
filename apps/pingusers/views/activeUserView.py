@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from apps.users.models import EmailVerifyRecord, UserProfile
+from apps.pingusers.models import EmailVerifyRecord, UserProfile
 
 
 # 验证用户注册后，在邮件里点击注册链接

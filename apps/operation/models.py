@@ -3,7 +3,7 @@ from datetime import datetime
 from django.db import models
 
 from apps.courses.models import Course
-from apps.users.models import UserProfile
+from apps.pingusers.models import UserProfile
 
 
 class UserAsk(models.Model):

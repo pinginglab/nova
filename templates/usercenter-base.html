@@ -42,12 +42,12 @@
                   </dd>
                 </dl>
                 <div class="btn">
-                  <a class="personcenter fl" href="{% url 'users:user_info' %}">进入个人中心</a>
+                  <a class="personcenter fl" href="{% url 'pingusers:user_info' %}">进入个人中心</a>
                   <a class="fr" href="{% url 'logout' %}">退出</a>
                 </div>
               </div>
             </div>
-            <a href="{% url 'users:mymessage' %}">
+            <a href="{% url 'pingusers:mymessage' %}">
               <div class="msg-num">
                 <span id="MsgNum">{{ request.user.unread_nums }}</span>
               </div>
@@ -111,7 +111,7 @@
   <div class="wp">
     <ul class="crumbs">
       <li><a href="{% url 'index' %}">首页</a>></li>
-      <li><a href="{% url 'users:user_info' %}">个人中心</a>></li>
+      <li><a href="{% url 'pingusers:user_info' %}">个人中心</a>></li>
       <li>个人信息</li>
     </ul>
   </div>
@@ -122,11 +122,11 @@
   <div class="wp list personal_list">
     <div class="left">
       <ul>
-        <li class="active2"><a href="{% url 'users:user_info' %}">个人资料</a></li>
-        <li><a href="{% url 'users:mycourse' %}">我的课程</a></li>
-        <li><a href="{% url 'users:myfav_org' %}">我的收藏</a></li>
+        <li class="active2"><a href="{% url 'pingusers:user_info' %}">个人资料</a></li>
+        <li><a href="{% url 'pingusers:mycourse' %}">我的课程</a></li>
+        <li><a href="{% url 'pingusers:myfav_org' %}">我的收藏</a></li>
         <li>
-          <a href="{% url 'users:mymessage' %}" style="position: relative;">
+          <a href="{% url 'pingusers:mymessage' %}" style="position: relative;">
             我的消息
           </a>
         </li>

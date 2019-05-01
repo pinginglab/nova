@@ -1,6 +1,6 @@
 from django.contrib.auth.backends import ModelBackend
 
-from apps.users.models import UserProfile
+from apps.pingusers.models import UserProfile
 
 
 class CustomBackend(ModelBackend):

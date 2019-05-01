@@ -2,8 +2,8 @@ from django.contrib.auth.hashers import make_password
 from django.shortcuts import render
 from django.views import View
 
-from apps.users.forms import ModifyPwdForm
-from apps.users.models import UserProfile
+from apps.pingusers.forms import ModifyPwdForm
+from apps.pingusers.models import UserProfile
 
 
 # 用户在重置密码页面提交新密码

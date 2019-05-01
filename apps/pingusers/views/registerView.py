@@ -2,8 +2,8 @@ from django.contrib.auth.hashers import make_password
 from django.shortcuts import render
 from django.views import View
 
-from apps.users.forms import RegisterForm
-from apps.users.models import UserProfile
+from apps.pingusers.forms import RegisterForm
+from apps.pingusers.models import UserProfile
 from apps.utils.email_send import send_register_email
 
 

@@ -7,7 +7,7 @@
   <div class="wp">
     <ul class="crumbs">
       <li><a href="{% url 'index' %}">首页</a>></li>
-      <li><a href="{% url 'users:user_info' %}">个人中心</a>></li>
+      <li><a href="{% url 'pingusers:user_info' %}">个人中心</a>></li>
       <li>我的收藏</li>
     </ul>
   </div>
@@ -24,9 +24,9 @@
       <div class="personal_des permessage">
         <div class="head">
           <ul class="tab_header messagehead">
-            <li><a href="{% url 'users:myfav_org' %}">课程机构</a></li>
-            <li class="active"><a href="{% url 'users:myfav_teacher' %}">授课教师 </a></li>
-            <li><a href="{% url 'users:myfav_course' %}">公开课程</a></li>
+            <li><a href="{% url 'pingusers:myfav_org' %}">课程机构</a></li>
+            <li class="active"><a href="{% url 'pingusers:myfav_teacher' %}">授课教师 </a></li>
+            <li><a href="{% url 'pingusers:myfav_course' %}">公开课程</a></li>
           </ul>
         </div>
         <div class="messagelist">
