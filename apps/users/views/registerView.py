@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views import View
 
 from apps.pingusers.forms import RegisterForm
-from apps.pingusers.models import UserProfile
+from apps.pingusers.models import PingUser
 from apps.utils.email_send import send_register_email
 
 
@@ -17,10 +17,10 @@ class RegisterView(View):
         register_form = RegisterForm(request.POST)
         if register_form.is_valid():
             user_name = request.POST.get('email', '')
-            if UserProfile.objects.filter(email=user_name):
+            if PingUser.objects.filter(email=user_name):
                 return render(request, 'register.html', {"register_form": register_form, "msg": "用户已经存在"})
             pass_word = request.POST.get('password', '')
-            user_profile = UserProfile()
+            user_profile = PingUser()
             user_profile.username = user_name
             user_profile.email = user_name
             user_profile.is_active = False

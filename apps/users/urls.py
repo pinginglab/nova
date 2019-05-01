@@ -1,15 +1,15 @@
 from django.conf.urls import url
 
-from apps.pingusers.views.myCourseView import MyCourseView
-from apps.pingusers.views.myFavCourseView import MyFavCourseView
-from apps.pingusers.views.myFavOrgView import MyFavOrgView
-from apps.pingusers.views.myFavTeacherView import MyFavTeacherView
-from apps.pingusers.views.myMessageView import MyMessageView
-from apps.pingusers.views.sendEmailCodeView import SendEmailCodeView
-from apps.pingusers.views.updateEmailView import UpdateEmailView
-from apps.pingusers.views.updatePwdView import UpdatePwdView
-from apps.pingusers.views.uploadImageView import UploadImageView
-from apps.pingusers.views.userInfoView import UserInfoView
+from apps.users.views.myCourseView import MyCourseView
+from apps.users.views.myFavCourseView import MyFavCourseView
+from apps.users.views.myFavOrgView import MyFavOrgView
+from apps.users.views.myFavTeacherView import MyFavTeacherView
+from apps.users.views.myMessageView import MyMessageView
+from apps.users.views.sendEmailCodeView import SendEmailCodeView
+from apps.users.views.updateEmailView import UpdateEmailView
+from apps.users.views.updatePwdView import UpdatePwdView
+from apps.users.views.uploadImageView import UploadImageView
+from apps.users.views.userInfoView import UserInfoView
 
 urlpatterns = [
     # 用户信息

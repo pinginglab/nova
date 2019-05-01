@@ -4,7 +4,7 @@ import json
 from django.http import HttpResponse
 from django.views import View
 
-from apps.pingusers.models import UserProfile
+from apps.pingusers.models import PingUser
 from apps.utils.email_send import send_register_email
 from apps.utils.mixin_utils import LoginRequiredMixin
 
@@ -15,7 +15,7 @@ class SendEmailCodeView(LoginRequiredMixin, View):
         email = request.GET.get('email', '')
 
         res = dict()
-        if UserProfile.objects.filter(email=email):
+        if PingUser.objects.filter(email=email):
             res['email'] = '邮箱已注册'
             return HttpResponse(json.dumps(res), content_type='application/json')
         send_register_email(email, 'update_email')

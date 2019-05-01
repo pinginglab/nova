@@ -1,10 +1,10 @@
 from datetime import datetime
 
+from django.contrib.auth.models import User
 from django.db import models
-from django.contrib.auth.models import AbstractUser
 
 
-class UserProfile(AbstractUser):
+class PingUser(User):
     nick_name = models.CharField(max_length=50, verbose_name=u"昵称", default=u"")
     birthday = models.DateField(verbose_name=u"生日", null=True, blank=True)
     gender = models.CharField(max_length=50, choices=(("male", u"男"), ("female", u"女")), default="female")

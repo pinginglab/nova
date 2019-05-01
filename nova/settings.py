@@ -30,7 +30,6 @@ DEBUG = os.environ.get("DEBUG", "True")
 ALLOWED_HOSTS = ['*']
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,15 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'captcha',
-    "pure_pagination",
+    'pure_pagination',
     'apps.core',
-    'apps.courses',
-    'apps.organization',
-    'apps.operation',
-    'apps.pingusers'
+    'apps.users',
 ]
 
-# AUTH_USER_MODEL = "apps.pingusers.UserProfile"
+# AUTH_USER_MODEL = "apps.users.User"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

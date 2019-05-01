@@ -1,7 +1,8 @@
 from django import forms
 from captcha.fields import CaptchaField
 
-from .models import UserProfile
+from .models import PingUser
+
 
 class LoginForm(forms.Form):
     username = forms.CharField(required=True)
@@ -26,11 +27,11 @@ class ModifyPwdForm(forms.Form):
 
 class UploadImageForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
+        model = PingUser
         fields = ['image']
 
 
 class UserInfoForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
+        model = PingUser
         fields = ['nick_name', 'gender', 'birthday', 'address', 'mobile']

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from apps.pingusers.models import EmailVerifyRecord, UserProfile
+from apps.pingusers.models import EmailVerifyRecord, PingUser
 
 
 # 验证用户注册后，在邮件里点击注册链接
@@ -12,7 +12,7 @@ class ActiveUserView(View):
         if all_records:
             for records in all_records:
                 email = records.email
-                user = UserProfile.objects.get(email=email)
+                user = PingUser.objects.get(email=email)
                 user.is_active = True
                 user.save()
                 return render(request, 'login.html')
