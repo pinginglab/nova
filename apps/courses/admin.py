@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.course.models import CourseResource, Lesson, Course, BannerCourse, Video
+from apps.courses.models import CourseResource, Lesson, Course, BannerCourse, Video
 
 
 class LessonInline:
@@ -62,8 +62,8 @@ class BannerCourseAdmin(object):
 
 
 class LessonAdmin(object):
-    list_display = ['course', 'name', 'add_time']
-    search_fields = ['course', 'name']
+    list_display = ['courses', 'name', 'add_time']
+    search_fields = ['courses', 'name']
     list_filter = ['course__name', 'name', 'add_time']
 
 
@@ -74,8 +74,8 @@ class VideoAdmin(object):
 
 
 class CourseResourceAdmin(object):
-    list_display = ['course', 'name', 'download', 'add_time']
-    search_fields = ['course', 'download', 'name']
+    list_display = ['courses', 'name', 'download', 'add_time']
+    search_fields = ['courses', 'download', 'name']
     list_filter = ['course__name', 'name', 'download', 'add_time']
 
 

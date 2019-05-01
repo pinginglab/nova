@@ -8,7 +8,7 @@ from apps.organization.models import CourseOrg
 
 class OrgCourseView(View):
     def get(self, request, org_id):
-        current_page = "course"
+        current_page = "courses"
         course_org = CourseOrg.objects.get(id=int(org_id))
         has_fav = False
         if request.user.is_authenticated():

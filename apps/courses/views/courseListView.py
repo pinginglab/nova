@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.views import View
 from pure_pagination import Paginator
 
-from apps.course.models import Course
+from apps.courses.models import Course
 
 
 class CourseListView(View):

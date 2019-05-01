@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from apps.course.models import Course, CourseResource
+from apps.courses.models import Course, CourseResource
 from apps.operation.models import UserCourse
 from apps.utils.mixin_utils import LoginRequiredMixin
 
@@ -32,7 +32,7 @@ class CourseInfoView(LoginRequiredMixin, View):
         all_resources = CourseResource.objects.filter(course=course)
 
         return render(request, 'course-video.html', {
-            'course': course,
+            'courses': course,
             'course_resources': all_resources,
             'relate_courses': relate_courses
         })

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from apps.course.models import Course
+from apps.courses.models import Course
 
 
 # 课程详情页
@@ -32,7 +32,7 @@ class CourseDetailView(View):
             relate_courses = []
 
         return render(request, 'course-detail.html', {
-            'course': course,
+            'courses': course,
             'relate_courses': relate_courses,
             'has_fav_course': has_fav_course,
             'has_fav_org': has_fav_org

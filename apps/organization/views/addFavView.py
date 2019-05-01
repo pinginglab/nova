@@ -2,7 +2,7 @@
 from django.http import HttpResponse
 from django.views import View
 
-from apps.course.models import Course
+from apps.courses.models import Course
 from apps.operation.models import UserFavorite
 from apps.organization.models.courseOrg import CourseOrg
 from apps.organization.models.teacher import Teacher

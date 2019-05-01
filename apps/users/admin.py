@@ -1,5 +1,4 @@
 from django.contrib import admin
-from xadmin.views.base import BaseAdminView, CommAdminView
 
 from .models import EmailVerifyRecord, Banner
 
@@ -30,5 +29,5 @@ class BannerAdmin(object):
 
 admin.site.register(EmailVerifyRecord, EmailVerifyRecordAdmin)
 admin.site.register(Banner, BannerAdmin)
-admin.site.register(BaseAdminView, BaseSetting)
-admin.site.register(CommAdminView, GlobalSettings)
+# admin.site.register(BaseAdminView, BaseSetting)
+# admin.site.register(CommAdminView, GlobalSettings)

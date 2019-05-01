@@ -7,8 +7,8 @@
 		<div class="crumbs">
 			<ul>
 				<li><a href="{% url 'index' %}">首页</a>></li>
-                <li><a href="{% url 'course:course_list' %}">公开课程</a>></li>
-				<li><a href="{% url 'course:course_detail'  course.id%}">课程详情</a>></li>
+                <li><a href="{% url 'courses:course_list' %}">公开课程</a>></li>
+				<li><a href="{% url 'courses:course_detail'  course.id%}">课程详情</a>></li>
                 <li>课程评论</li>
 			</ul>
 		</div>
@@ -59,8 +59,8 @@
                 <div class="content">
                     <div class="mod-tab-menu">
                         <ul class="course-menu clearfix">
-                            <li><a class="ui-tabs-active " id="learnOn"  href="{% url 'course:course_info'  course.id%}"><span>章节</span></a></li>
-                            <li><a id="commentOn" class="active" href="{% url 'course:course_comment' course.id %}"><span>评论</span></a></li>
+                            <li><a class="ui-tabs-active " id="learnOn"  href="{% url 'courses:course_info'  course.id%}"><span>章节</span></a></li>
+                            <li><a id="commentOn" class="active" href="{% url 'courses:course_comment' course.id %}"><span>评论</span></a></li>
                         </ul>
                     </div>
 
@@ -208,7 +208,7 @@ $('#js-pl-submit').on('click', function () {
     $.ajax({
         cache: false,
         type: "POST",
-        url: "{% url 'course:add_comment' %}",
+        url: "{% url 'courses:add_comment' %}",
         data: {'course_id': {{ course.id }}, 'comments': comments},
         async: true,
         beforeSend: function (xhr, settings) {

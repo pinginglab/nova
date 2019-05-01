@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import sys
 from nova.conf.db import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -28,7 +29,6 @@ DEBUG = os.environ.get("DEBUG", "True")
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,15 +41,14 @@ INSTALLED_APPS = [
     'crispy_forms',
     'captcha',
     "pure_pagination",
-    'xadmin',
     'apps.core',
-    'apps.course',
+    'apps.courses',
     'apps.organization',
     'apps.operation',
     'apps.users',
 ]
 
-AUTH_USER_MODEL = "users.UserProfile"
+AUTH_USER_MODEL = "apps.users.UserProfile"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from apps.course.models import Course
+from apps.courses.models import Course
 from apps.operation.models import UserFavorite
 from apps.organization.models import Teacher
 

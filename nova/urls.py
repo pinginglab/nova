@@ -49,7 +49,7 @@ urlpatterns = [
     url(r'^org/', include('organization.urls', namespace="org")),
 
     # 课程相关URL配置
-    url(r'^course/', include('courses.urls', namespace="course")),
+    url(r'^courses/', include('courses.urls', namespace="courses")),
 
     # 配置上传文件的访问处理函数
     url(r'^media/(?P<path>.*)', serve, {"document_root": MEDIA_ROOT}),

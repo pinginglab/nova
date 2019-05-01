@@ -10,8 +10,8 @@ class UserAskAdmin(object):
     model_icon = 'fa fa-flag'
 
 class CourseCommentsAdmin(object):
-    list_display = ['user', 'course', 'comments', 'add_time']
-    search_fields = ['user', 'course', 'comments']
+    list_display = ['user', 'courses', 'comments', 'add_time']
+    search_fields = ['user', 'courses', 'comments']
     list_filter = ['user__nick_name', 'course__name', 'comments', 'add_time']
 
 
@@ -31,8 +31,8 @@ class UserMessageAdmin(object):
 
 
 class UserCourseAdmin(object):
-    list_display = ['user', 'course', 'add_time']
-    search_fields = ['user', 'course']
+    list_display = ['user', 'courses', 'add_time']
+    search_fields = ['user', 'courses']
     list_filter = ['user__nick_name', 'course__name', 'add_time']
 
 

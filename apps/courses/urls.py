@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from apps.course.views import courseListView, CourseDetailView, CourseInfoView, CommentsView, AddCommentView, \
+from apps.courses.views import courseListView, CourseDetailView, CourseInfoView, CommentsView, AddCommentView, \
     VideoPlayView
 
 urlpatterns = [
