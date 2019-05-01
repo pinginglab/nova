@@ -3,9 +3,8 @@ import string
 
 from django.core.mail import send_mail
 
-from users.models import EmailVerifyRecord
-
-from onlineShop.settings import EMAIL_FROM
+from apps.users.models import EmailVerifyRecord
+from nova.conf.email import EMAIL_FROM
 
 
 def send_register_email(email, send_type='register'):
