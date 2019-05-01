@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'pure_pagination',
     'apps.core',
     'apps.users',
+    'apps.organization',
+    'apps.courses',
+    'apps.operation',
 ]
 
 # AUTH_USER_MODEL = "apps.users.User"
