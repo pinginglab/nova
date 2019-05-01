@@ -1,4 +1,4 @@
-import xadmin
+from django.contrib import admin
 from apps.course.models import CourseResource, Lesson, Course, BannerCourse, Video
 
 
@@ -11,6 +11,7 @@ class LessonInline:
 class CourseResourceInline:
     model = CourseResource
     extra = 0
+
 
 class CourseAdmin(object):
     list_display = ['name', 'desc', 'detail', 'degree', 'learn_times', 'students', 'fav_nums', 'image', 'click_nums', 'get_zj_nums', 'add_time']
@@ -78,8 +79,8 @@ class CourseResourceAdmin(object):
     list_filter = ['course__name', 'name', 'download', 'add_time']
 
 
-xadmin.site.register(Course, CourseAdmin)
-xadmin.site.register(BannerCourse, BannerCourseAdmin)
-xadmin.site.register(Lesson, LessonAdmin)
-xadmin.site.register(Video, VideoAdmin)
-xadmin.site.register(CourseResource, CourseResourceAdmin)
+admin.site.register(Course, CourseAdmin)
+admin.site.register(BannerCourse, BannerCourseAdmin)
+admin.site.register(Lesson, LessonAdmin)
+admin.site.register(Video, VideoAdmin)
+admin.site.register(CourseResource, CourseResourceAdmin)

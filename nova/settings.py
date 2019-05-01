@@ -38,12 +38,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
+    'crispy_forms',
+    'captcha',
+    "pure_pagination",
+    'xadmin',
     'apps.core',
     'apps.course',
     'apps.organization',
     'apps.operation',
+    'apps.users',
 ]
+
+AUTH_USER_MODEL = "users.UserProfile"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -163,3 +169,7 @@ REST_FRAMEWORK = {
 #         'DIGITS': 0,      # Digits '0123456789'
 #         'PUNCTUATION': 0  # Punctuation """!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
 # }
+
+# 配置上传文件的存放路径
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

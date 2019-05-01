@@ -1,4 +1,6 @@
-import xadmin
+from django.contrib import admin
+
+from apps.organization.models import CityDict, CourseOrg, Teacher
 
 
 class CityDictAdmin(object):
@@ -19,6 +21,6 @@ class TeacherAdmin(object):
     search_fields = ['org', 'name', 'work_years', 'work_company', 'work_position', 'points', 'click_nums', 'fav_nums']
     list_filter = ['org__name', 'name', 'work_years', 'work_company', 'work_position', 'points', 'click_nums', 'fav_nums', 'add_time']
 
-xadmin.site.register(CityDict, CityDictAdmin)
-xadmin.site.register(CourseOrg, CourseOrgAdmin)
-xadmin.site.register(Teacher, TeacherAdmin)
+admin.site.register(CityDict, CityDictAdmin)
+admin.site.register(CourseOrg, CourseOrgAdmin)
+admin.site.register(Teacher, TeacherAdmin)

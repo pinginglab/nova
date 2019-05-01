@@ -1,4 +1,4 @@
-import xadmin
+from django.contrib import admin
 
 from apps.operation.models import UserAsk, CourseComments, UserFavorite, UserMessage, UserCourse
 
@@ -36,8 +36,8 @@ class UserCourseAdmin(object):
     list_filter = ['user__nick_name', 'course__name', 'add_time']
 
 
-xadmin.site.register(UserAsk, UserAskAdmin)
-xadmin.site.register(CourseComments, CourseCommentsAdmin)
-xadmin.site.register(UserFavorite, UserFavoriteAdmin)
-xadmin.site.register(UserMessage, UserMessageAdmin)
-xadmin.site.register(UserCourse, UserCourseAdmin)
+admin.site.register(UserAsk, UserAskAdmin)
+admin.site.register(CourseComments, CourseCommentsAdmin)
+admin.site.register(UserFavorite, UserFavoriteAdmin)
+admin.site.register(UserMessage, UserMessageAdmin)
+admin.site.register(UserCourse, UserCourseAdmin)

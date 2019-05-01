@@ -1,5 +1,5 @@
-import xadmin
-from xadmin import views
+from django.contrib import admin
+from xadmin.views.base import BaseAdminView, CommAdminView
 
 from .models import EmailVerifyRecord, Banner
 
@@ -28,7 +28,7 @@ class BannerAdmin(object):
     list_filter = ['title', 'image', 'url', 'index', 'add_time']
 
 
-xadmin.site.register(EmailVerifyRecord, EmailVerifyRecordAdmin)
-xadmin.site.register(Banner, BannerAdmin)
-xadmin.site.register(views.BaseAdminView, BaseSetting)
-xadmin.site.register(views.CommAdminView, GlobalSettings)
+admin.site.register(EmailVerifyRecord, EmailVerifyRecordAdmin)
+admin.site.register(Banner, BannerAdmin)
+admin.site.register(BaseAdminView, BaseSetting)
+admin.site.register(CommAdminView, GlobalSettings)
