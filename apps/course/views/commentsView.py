@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from apps.course.models import Course
+from apps.course.models import Course, CourseResource
 from apps.utils.mixin_utils import LoginRequiredMixin
 
 

@@ -2,7 +2,8 @@
 from django.shortcuts import render
 from django.views import View
 
-from apps.course.models import Course
+from apps.course.models import Course, CourseResource
+from apps.operation.models import UserCourse
 from apps.utils.mixin_utils import LoginRequiredMixin
 
 
@@ -22,10 +23,10 @@ class CourseInfoView(LoginRequiredMixin, View):
         user_ids = [user_course.user.id for user_course in user_courses]
         all_user_courses = UserCourse.objects.filter(user_id__in=user_ids)
 
-        #取出所有课程ID
+        # 取出所有课程ID
         course_ids = [user_course.course.id for user_course in all_user_courses]
 
-        #获取学过该用户学过的其他所有课程
+        # 获取学过该用户学过的其他所有课程
         relate_courses = Course.objects.filter(id__in=course_ids).order_by("-click_nums")[:5]
 
         all_resources = CourseResource.objects.filter(course=course)

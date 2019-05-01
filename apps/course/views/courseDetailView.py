@@ -5,6 +5,9 @@ from apps.course.models import Course
 
 
 # 课程详情页
+from apps.operation.models import UserFavorite
+
+
 class CourseDetailView(View):
     def get(self, request, course_id):
         course = Course.objects.get(id=int(course_id))
