@@ -1,6 +1,6 @@
 import re
 
-from django.forms import forms
+from django import forms
 
 from apps.operation.models import UserAsk
 

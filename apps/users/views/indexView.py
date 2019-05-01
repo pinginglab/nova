@@ -3,7 +3,8 @@ from django.views import View
 
 from apps.courses.models import Course
 from apps.organization.models import CourseOrg
-from apps.pingusers.models import Banner
+
+from apps.users.models import Banner
 
 
 # 慕学在线网首页

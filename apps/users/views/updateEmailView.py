@@ -3,7 +3,7 @@ import json
 from django.http import HttpResponse
 from django.views import View
 
-from apps.pingusers.models import EmailVerifyRecord
+from apps.users.models import EmailVerifyRecord
 from apps.utils.mixin_utils import LoginRequiredMixin
 
 

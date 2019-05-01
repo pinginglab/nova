@@ -3,11 +3,11 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
 
-from apps.pingusers.forms import UserInfoForm
+from apps.users.forms import UserInfoForm
 from apps.utils.mixin_utils import LoginRequiredMixin
 
 
-# userprofile
+# pingusers
 class UserInfoView(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'usercenter-info.html')

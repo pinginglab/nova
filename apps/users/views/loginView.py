@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views import View
 
-from apps.pingusers.forms import LoginForm
+from apps.users.forms import LoginForm
 
 
 # 用户登录

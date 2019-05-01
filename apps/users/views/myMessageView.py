@@ -11,7 +11,7 @@ class MyMessageView(LoginRequiredMixin, View):
         # 如果 user = 0 ，代表全局消息，所有用户都能收到
         all_message = UserMessage.objects.filter(user=request.user.id)
 
-        #进入到我的消息页面后，把已读的消息清空
+        # 进入到我的消息页面后，把已读的消息清空
         all_unread_message = UserMessage.objects.filter(user=request.user.id, has_read=False)
         for unread_message in all_unread_message:
             unread_message.has_read = True

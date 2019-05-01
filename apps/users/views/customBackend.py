@@ -1,6 +1,6 @@
 from django.contrib.auth.backends import ModelBackend
 
-from apps.pingusers.models import PingUser
+from apps.users.models import PingUser
 
 
 class CustomBackend(ModelBackend):

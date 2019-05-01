@@ -3,7 +3,7 @@ import string
 
 from django.core.mail import send_mail
 
-from apps.pingusers.models import EmailVerifyRecord
+from apps.users.models import EmailVerifyRecord
 from nova.conf.email import EMAIL_FROM
 
 

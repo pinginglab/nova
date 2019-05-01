@@ -4,7 +4,7 @@ import json
 from django.http import HttpResponse
 from django.views import View
 
-from apps.pingusers.models import PingUser
+from apps.users.models import PingUser
 from apps.utils.email_send import send_register_email
 from apps.utils.mixin_utils import LoginRequiredMixin
 

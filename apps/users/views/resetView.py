@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from apps.pingusers.models import EmailVerifyRecord
+from apps.users.models import EmailVerifyRecord
 
 
 # 用户进入到重置密码页面

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from apps.pingusers.forms import ForgetForm
+from apps.users.forms import ForgetForm
 from apps.utils.email_send import send_register_email
 
 
