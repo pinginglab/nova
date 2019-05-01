@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'captcha',
     'pure_pagination',
-    'apps.core',
     'apps.users',
     'apps.organization',
     'apps.courses',

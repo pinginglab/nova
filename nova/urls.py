@@ -18,8 +18,6 @@ from django.conf.urls import url, include
 
 from django.views.static import serve
 
-from apps.core import admin
-from apps.core.views.ContaineView import ContainerView
 from apps.users.views.ActiveUserView import ActiveUserView
 from apps.users.views.ForgetPwdView import ForgetPwdView
 from apps.users.views.IndexView import IndexView
@@ -34,7 +32,7 @@ urlpatterns = [
     # url('admin/', admin.site.urls),
     # url(r'^core', ContainerView.as_view(), name='core'),
     # 配置页面
-    url('^$', IndexView.as_view(), name="index"),
+
     url('^login/$', LoginView.as_view(), name="login"),
     url('^register/$', RegisterView.as_view(), name="register"),
     url(r'^captcha/', include('captcha.urls')),
@@ -61,6 +59,7 @@ urlpatterns = [
 
     # 课程相关URL配置
     url(r'^pingusers/', include('apps.users.urls', namespace="pingusers")),
+    url('^$', IndexView.as_view(), name="index"),
 ]
 
 # 全局 404 页面配置（django 会自动调用这个变量）

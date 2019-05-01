@@ -1,7 +1,9 @@
+import os
 
-EMAIL_HOST = "smtp.sina.com"
-EMAIL_PORT = 25
-EMAIL_HOST_USER = "jingguanliuye@sina.com"
-EMAIL_HOST_PASSWORD = "admin123"
+EMAIL_PORT = int(os.getenv("SMTP_PORT", 465))
+EMAIL_ACCOUNT = os.getenv("EMAIL_ACCOUNT", "smp-system@139.com")
+EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD", "AikauAXprz1u4dNe")
+EMAIL_HOST = os.getenv("EMAIL_HOST", "smtp.139.com")
+EMAIL_SSL = bool(int(os.getenv("EMAIL_SSL", 1)))
 EMAIL_TLS = False
-EMAIL_FROM = "jingguanliuye@sina.com"
+EMAIL_FROM = "smp-system@139.com"

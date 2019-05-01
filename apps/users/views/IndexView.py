@@ -7,12 +7,12 @@ from apps.organization.models import CourseOrg
 from apps.users.models import Banner
 
 
-# 慕学在线网首页
+# 拼客在线网首页
 class IndexView(View):
     def get(self, request):
         # 取出轮播图
         all_banners = Banner.objects.all().order_by('index')
-        courses = Course.objects.filter(is_banner=False)[:6]
+        courses = Course.objects.filter(is_banner=True)[:6]
         banner_courses = Course.objects.filter(is_banner=True)[:3]
         course_orgs = CourseOrg.objects.all()[:15]
         return render(request, 'index.html', {
