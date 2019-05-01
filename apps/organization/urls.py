@@ -1,5 +1,15 @@
 from django.conf.urls import url
 
+from apps.organization.views.addFavView import AddFavView
+from apps.organization.views.addUserAskView import AddUserAskView
+from apps.organization.views.orgCourseView import OrgCourseView
+from apps.organization.views.orgDescView import OrgDescView
+from apps.organization.views.orgHomeView import OrgHomeView
+from apps.organization.views.orgTeacherView import OrgTeacherView
+from apps.organization.views.orgView import OrgView
+from apps.organization.views.teacherDetailView import TeacherDetailView
+from apps.organization.views.teacherListView import TeacherListView
+
 urlpatterns = [
     #课程机构列表页
     url(r'^list/$', OrgView.as_view(), name='org_list'),

@@ -1,6 +1,13 @@
 from django.conf.urls import url
 
-from apps.pingusers.views.sendEmailCodeView import UpdatePwdView
+from apps.pingusers.views.myCourseView import MyCourseView
+from apps.pingusers.views.myFavCourseView import MyFavCourseView
+from apps.pingusers.views.myFavOrgView import MyFavOrgView
+from apps.pingusers.views.myFavTeacherView import MyFavTeacherView
+from apps.pingusers.views.myMessageView import MyMessageView
+from apps.pingusers.views.sendEmailCodeView import SendEmailCodeView
+from apps.pingusers.views.updateEmailView import UpdateEmailView
+from apps.pingusers.views.updatePwdView import UpdatePwdView
 from apps.pingusers.views.uploadImageView import UploadImageView
 from apps.pingusers.views.userInfoView import UserInfoView
 

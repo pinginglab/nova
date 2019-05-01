@@ -1,11 +1,15 @@
 from django.conf.urls import url
 
-from apps.courses.views import courseListView, CourseDetailView, CourseInfoView, CommentsView, AddCommentView, \
-    VideoPlayView
+from apps.courses.views.addCommentView import AddCommentView
+from apps.courses.views.commentsView import CommentsView
+from apps.courses.views.courseDetailView import CourseDetailView
+from apps.courses.views.courseInfoView import CourseInfoView
+from apps.courses.views.courseListView import CourseListView
+from apps.courses.views.videoPlayView import VideoPlayView
 
 urlpatterns = [
     #课程列表页
-    url(r'^list/$', courseListView.as_view(), name='course_list'),
+    url(r'^list/$', CourseListView.as_view(), name='course_list'),
 
     # 课程详情页
     url(r'^detail/(?P<course_id>\d+)/$', CourseDetailView.as_view(), name='course_detail'),
