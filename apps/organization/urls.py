@@ -1,14 +1,14 @@
 from django.conf.urls import url
 
-from apps.organization.views.addFavView import AddFavView
-from apps.organization.views.addUserAskView import AddUserAskView
-from apps.organization.views.orgCourseView import OrgCourseView
-from apps.organization.views.orgDescView import OrgDescView
-from apps.organization.views.orgHomeView import OrgHomeView
-from apps.organization.views.orgTeacherView import OrgTeacherView
-from apps.organization.views.orgView import OrgView
-from apps.organization.views.teacherDetailView import TeacherDetailView
-from apps.organization.views.teacherListView import TeacherListView
+from apps.organization.views.AddFavView import AddFavView
+from apps.organization.views.AddUserAskView import AddUserAskView
+from apps.organization.views.OrgCourseView import OrgCourseView
+from apps.organization.views.OrgDescView import OrgDescView
+from apps.organization.views.OrgHomeView import OrgHomeView
+from apps.organization.views.OrgTeacherView import OrgTeacherView
+from apps.organization.views.OrgView import OrgView
+from apps.organization.views.TeacherDetailView import TeacherDetailView
+from apps.organization.views.TeacherListView import TeacherListView
 
 urlpatterns = [
     #课程机构列表页

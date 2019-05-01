@@ -20,14 +20,14 @@ from django.views.static import serve
 
 from apps.core import admin
 from apps.core.views.ContaineView import ContainerView
-from apps.users.views.activeUserView import ActiveUserView
-from apps.users.views.forgetPwdView import ForgetPwdView
-from apps.users.views.indexView import IndexView
-from apps.users.views.loginView import LoginView
-from apps.users.views.logoutView import LogoutView
-from apps.users.views.modifyPwdView import ModifyPwdView
-from apps.users.views.registerView import RegisterView
-from apps.users.views.resetView import ResetView
+from apps.users.views.ActiveUserView import ActiveUserView
+from apps.users.views.ForgetPwdView import ForgetPwdView
+from apps.users.views.IndexView import IndexView
+from apps.users.views.LoginView import LoginView
+from apps.users.views.LogoutView import LogoutView
+from apps.users.views.ModifyPwdView import ModifyPwdView
+from apps.users.views.RegisterView import RegisterView
+from apps.users.views.ResetView import ResetView
 
 urlpatterns = [
     # url(r'^xadmin/', admin.site.urls),
@@ -60,10 +60,9 @@ urlpatterns = [
     # url(r'^static/(?P<path>.*)', serve, {"document_root": STATIC_ROOT}),
 
     # 课程相关URL配置
-    url(r'^pingusers/', include('apps.pingusers.urls', namespace="pingusers")),
+    url(r'^pingusers/', include('apps.users.urls', namespace="pingusers")),
 ]
 
-
 # 全局 404 页面配置（django 会自动调用这个变量）
-handler404 = 'pingusers.views.page_not_found'
-handler500 = 'pingusers.views.page_error'
+handler404 = 'users.views.otherView.page_not_found'
+handler500 = 'users.views.otherView.page_error'

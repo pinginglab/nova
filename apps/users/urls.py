@@ -1,15 +1,7 @@
 from django.conf.urls import url
 
-from apps.users.views.myCourseView import MyCourseView
-from apps.users.views.myFavCourseView import MyFavCourseView
-from apps.users.views.myFavOrgView import MyFavOrgView
-from apps.users.views.myFavTeacherView import MyFavTeacherView
-from apps.users.views.myMessageView import MyMessageView
-from apps.users.views.sendEmailCodeView import SendEmailCodeView
-from apps.users.views.updateEmailView import UpdateEmailView
-from apps.users.views.updatePwdView import UpdatePwdView
-from apps.users.views.uploadImageView import UploadImageView
-from apps.users.views.userInfoView import UserInfoView
+from apps.users.views import UserInfoView, UploadImageView, UpdatePwdView, SendEmailCodeView, UpdateEmailView, \
+    MyCourseView, MyFavOrgView, MyFavTeacherView, MyFavCourseView, MyMessageView
 
 urlpatterns = [
     # 用户信息

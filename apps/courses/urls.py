@@ -1,11 +1,11 @@
 from django.conf.urls import url
 
-from apps.courses.views.addCommentView import AddCommentView
-from apps.courses.views.commentsView import CommentsView
-from apps.courses.views.courseDetailView import CourseDetailView
-from apps.courses.views.courseInfoView import CourseInfoView
-from apps.courses.views.courseListView import CourseListView
-from apps.courses.views.videoPlayView import VideoPlayView
+from apps.courses.views.AddCommentView import AddCommentView
+from apps.courses.views.AommentsView import CommentsView
+from apps.courses.views.CourseDetailView import CourseDetailView
+from apps.courses.views.CourseInfoView import CourseInfoView
+from apps.courses.views.CourseListView import CourseListView
+from apps.courses.views.VideoPlayView import VideoPlayView
 
 urlpatterns = [
     #课程列表页
